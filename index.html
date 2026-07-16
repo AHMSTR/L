@@ -17,17 +17,17 @@
       font-family: "Ramabhadra", sans-serif;
       background: #ffffff;
       min-height: 100vh;
-      padding: 30px 60px;
+      padding: 40px 60px;
     }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .ramabhadra-regular {
-      font-family: "Ramabhadra", sans-serif;
-      font-weight: 400;
-      font-style: normal;
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
     .logo {
       font-size: 1.6245rem;
@@ -36,10 +36,17 @@
       text-transform: uppercase;
       text-decoration: none;
       display: inline-block;
+      line-height: 1;
     }
     .logo:visited, .logo:active, .logo:focus {
       color: #000;
       outline: none;
+    }
+    .slogan {
+      font-size: 0.75rem;
+      color: #555;
+      text-transform: none;
+      letter-spacing: 0.3px;
     }
     .btn {
       background: #000;
@@ -62,10 +69,13 @@
     }
     @media (max-width: 768px) {
       body {
-        padding: 20px 20px;
+        padding: 30px 20px;
       }
       .logo {
         font-size: 1.17325rem;
+      }
+      .slogan {
+        font-size: 0.65rem;
       }
       .btn {
         padding: 11.025px 22.05px;
@@ -76,7 +86,10 @@
 </head>
 <body>
   <header>
-    <a href="https://linksco.co.za" class="logo">LINKSCO</a>
+    <div class="brand">
+      <a href="https://linksco.co.za" class="logo">LINKSCO</a>
+      <div class="slogan">The link between idea and reality.</div>
+    </div>
     <a href="mailto:info@linksco.co.za" class="btn">GET IN TOUCH</a>
   </header>
 </body>
