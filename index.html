@@ -65,6 +65,26 @@
         inset 3.92px 3.92px 7.84px #d9d9d9,
         inset -3.92px -3.92px 7.84px #ffffff;
     }
+
+    /* Image section */
+    .image-container {
+      width: 80%;
+      margin: 58.8px auto 0 auto;
+      border-radius: 49px;
+      padding: 19.6px;
+      background: #f2f2f2;
+      box-shadow: 
+        14px 14px 28px #d9d9d9,
+        -14px -14px 28px #ffffff;
+    }
+    .image-container img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 29.4px;
+      filter: grayscale(100%); /* makes any image B&W */
+    }
+
     @media (max-width: 768px) {
       body {
         padding: 19.6px 19.6px;
@@ -78,6 +98,12 @@
         letter-spacing: 0.67138134px;
         border-radius: 49px;
       }
+      .image-container {
+        width: 90%;
+        margin-top: 39.2px;
+        padding: 14px;
+        border-radius: 39.2px;
+      }
     }
   </style>
 </head>
@@ -88,6 +114,11 @@
       Get in touch
     </a>
   </header>
+
+  <!-- Image below header -->
+  <div class="image-container">
+    <img src="d-koi-GQJY4UPR21U-unsplash.jpg" alt="Hero image">
+  </div>
 
   <script>
     document.querySelectorAll('a').forEach(link => {
