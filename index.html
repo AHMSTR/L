@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1200">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f2f2f2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,6 @@
       box-sizing: border-box;
     }
     body {
-      width: 1200px;
       font-family: "Atkinson Hyperlegible", sans-serif;
       font-weight: 400;
       background: #f2f2f2;
@@ -23,17 +22,17 @@
       padding: 29.4px 58.8px;
     }
     header {
-      width: 1082.4px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .logo {
-      font-size: 24.6825px;
+      font-size: 1.54265769rem;
       font-weight: 400;
       color: #333;
       text-transform: uppercase;
       text-decoration: none;
+      display: inline-block;
       line-height: 1.1;
     }
     .btn {
@@ -42,12 +41,15 @@
       border: none;
       padding: 13.9944px 31.9872px;
       border-radius: 49px;
-      font-size: 14.4801px;
+      font-size: 0.90500299686rem;
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.67138134px;
+      cursor: pointer;
       text-decoration: none;
       display: inline-flex;
+      align-items: center;
+      justify-content: center;
       box-shadow: 
         7.84px 7.84px 15.68px #d9d9d9,
         -7.84px -7.84px 15.68px #ffffff;
@@ -63,9 +65,11 @@
         inset 3.92px 3.92px 7.84px #d9d9d9,
         inset -3.92px -3.92px 7.84px #ffffff;
     }
+
+    /* Image section - now 100% */
     .image-container {
-      width: 1082.4px;
-      margin-top: 58.8px;
+      width: 100%;
+      margin: 58.8px auto 0 auto;
       border-radius: 49px;
       padding: 19.6px;
       background: #f2f2f2;
@@ -75,19 +79,43 @@
     }
     .image-container img {
       display: block;
-      width: 1043.2px;
+      width: 100%;
       height: auto;
       border-radius: 29.4px;
       filter: grayscale(100%);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 19.6px 19.6px;
+      }
+      .logo {
+        font-size: 1.114141665rem;
+      }
+      .btn {
+        padding: 9.996px 21.9912px;
+        font-size: 0.78401115738rem;
+        letter-spacing: 0.67138134px;
+        border-radius: 49px;
+      }
+      .image-container {
+        width: 100%;
+        margin-top: 39.2px;
+        padding: 14px;
+        border-radius: 39.2px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <a href="https://linksco.co.za" class="logo">LINKSCO</a>
-    <a href="mailto:info@linksco.co.za" class="btn">Get in touch</a>
+    <a href="mailto:info@linksco.co.za" class="btn">
+      Get in touch
+    </a>
   </header>
 
+  <!-- Image below header -->
   <div class="image-container">
     <img src="d-koi-GQJY4UPR21U-unsplash.jpg" alt="Hero image">
   </div>
