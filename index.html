@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#f2f2f2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,34 +14,40 @@
       padding: 0;
       box-sizing: border-box;
     }
+    html, body {
+      overflow-x: hidden; /* prevents overflow on zoom */
+    }
     body {
       font-family: "Atkinson Hyperlegible", sans-serif;
       font-weight: 400;
       background: #f2f2f2;
       min-height: 100vh;
-      padding: 29.4px 58.8px;
+      padding: clamp(19.6px, 4vw, 29.4px) clamp(19.6px, 6vw, 58.8px);
     }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 16px;
+      flex-wrap: wrap; /* prevents button pushing off screen */
     }
     .logo {
-      font-size: 1.54265769rem;
+      font-size: clamp(1.114rem, 3vw, 1.54265769rem);
       font-weight: 400;
       color: #333;
       text-transform: uppercase;
       text-decoration: none;
       display: inline-block;
       line-height: 1.1;
+      white-space: nowrap;
     }
     .btn {
       background: #f2f2f2;
       color: #444;
       border: none;
-      padding: 13.9944px 31.9872px;
+      padding: clamp(9.996px, 2vw, 13.9944px) clamp(21.9912px, 4vw, 31.9872px);
       border-radius: 49px;
-      font-size: 0.90500299686rem;
+      font-size: clamp(0.784rem, 2vw, 0.90500299686rem);
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.67138134px;
@@ -50,10 +56,12 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      white-space: nowrap;
       box-shadow: 
         7.84px 7.84px 15.68px #d9d9d9,
         -7.84px -7.84px 15.68px #ffffff;
       transition: all 0.2s ease;
+      flex-shrink: 0; /* keeps button from squishing */
     }
     .btn:hover {
       box-shadow: 
@@ -66,12 +74,13 @@
         inset -3.92px -3.92px 7.84px #ffffff;
     }
 
-    /* Image section - now 100% */
+    /* Image section - 100% but contained */
     .image-container {
       width: 100%;
-      margin: 58.8px auto 0 auto;
+      max-width: 100%;
+      margin: clamp(39.2px, 8vw, 58.8px) auto 0 auto;
       border-radius: 49px;
-      padding: 19.6px;
+      padding: clamp(14px, 3vw, 19.6px);
       background: #f2f2f2;
       box-shadow: 
         14px 14px 28px #d9d9d9,
@@ -85,26 +94,7 @@
       filter: grayscale(100%);
     }
 
-    @media (max-width: 768px) {
-      body {
-        padding: 19.6px 19.6px;
-      }
-      .logo {
-        font-size: 1.114141665rem;
-      }
-      .btn {
-        padding: 9.996px 21.9912px;
-        font-size: 0.78401115738rem;
-        letter-spacing: 0.67138134px;
-        border-radius: 49px;
-      }
-      .image-container {
-        width: 100%;
-        margin-top: 39.2px;
-        padding: 14px;
-        border-radius: 39.2px;
-      }
-    }
+    /* Removed the shrinking media query. Sizes now scale smoothly instead */
   </style>
 </head>
 <body>
@@ -117,7 +107,7 @@
 
   <!-- Image below header -->
   <div class="image-container">
-    <img src="fia-yang-5ye2nOdHDqM-unsplash.jpg" alt="Hero image">
+    <img src="d-koi-GQJY4UPR21U-unsplash.jpg" alt="Hero image">
   </div>
 
   <script>
