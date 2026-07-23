@@ -45,18 +45,18 @@
     .contact-section h2 { font-size: 1.8rem; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 19.6px; color: #333; }
     .contact-section p { font-size: 0.95rem; font-weight: 400; margin-bottom: 39.2px; opacity: 0.8; }
     
-    .contact-form { display: flex; flex-direction: column; gap: 17.15px; text-align: left; } /* gap reduced a bit */
+    .contact-form { display: flex; flex-direction: column; gap: 17.15px; text-align: left; }
 
-    /* REDUCED INPUT SIZE */
+    /* SMALLER INPUTS */
     .contact-form input, 
     .contact-form textarea {
-      padding: 13.78px 20.68px; /* was 15.68px 23.52px */
-      border-radius: 25.8px; /* was 29.4px */
+      padding: 13.78px 20.68px;
+      border-radius: 25.8px;
       border: none;
       background: #f2f2f2;
       font-family: "Atkinson Hyperlegible", sans-serif;
       font-weight: 400;
-      font-size: 0.84rem; /* was 0.95rem */
+      font-size: 0.84rem;
       color: #444;
       box-shadow: inset 5.17px 5.17px 10.34px #d9d9d9, inset -5.17px -5.17px 10.34px #ffffff;
       outline: none;
@@ -66,16 +66,16 @@
     .contact-form textarea:focus {
       box-shadow: inset 3.45px 3.45px 6.89px #d9d9d9, inset -3.45px -3.45px 6.89px #ffffff;
     }
-    .contact-form textarea { min-height: 137.9px; resize: vertical; } /* was 156.8px */
+    .contact-form textarea { min-height: 137.9px; resize: vertical; }
 
-    /* FULL WIDTH BUTTON - stays big */
+    /* REDUCED BUTTON TO MATCH */
     .contact-form .btn {
       width: 100%;
-      margin-top: 23.52px;
-      padding: 17.864px 0;
-      font-size: 1.045rem;
-      border-radius: 25.8px; /* match new input radius */
-      letter-spacing: 1.8px;
+      margin-top: 20.7px; /* reduced from 23.52px */
+      padding: 15.72px 0; /* reduced from 17.864px */
+      font-size: 0.92rem; /* reduced from 1.045rem */
+      border-radius: 25.8px;
+      letter-spacing: 1.6px; /* slightly tighter */
       text-align: center;
     }
 
@@ -101,11 +101,11 @@
       }
       .contact-form input,
       .contact-form textarea {
-        padding: 14px 21px; /* slightly smaller on mobile too */
+        padding: 14px 21px;
         border-radius: 25.8px;
       }
       .contact-form .btn {
-        padding: 17.248px 0;
+        padding: 15.2px 0; /* scaled for mobile */
         border-radius: 25.8px;
       }
     }
