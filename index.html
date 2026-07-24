@@ -27,13 +27,14 @@
     
     .btn {
       background: #f2f2f2; color: #444; border: none; padding: 13.9944px 31.9872px; border-radius: 49px;
-      font-size: 0.90500299686rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.67138134px;
+      font-size: 0.90500299686rem; font-weight: 400; letter-spacing: 0.67138134px;
       cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
       white-space: nowrap; flex-shrink: 0; font-family: "Atkinson Hyperlegible", sans-serif;
       box-shadow: 7.84px 7.84px 15.68px #d9d9d9, -7.84px -7.84px 15.68px #ffffff; transition: all 0.2s ease;
     }
     .btn:hover { box-shadow: 3.92px 3.92px 7.84px #d9d9d9, -3.92px -3.92px 7.84px #ffffff; }
     .btn:active { box-shadow: inset 3.92px 3.92px 7.84px #d9d9d9, inset -3.92px -3.92px 7.84px #ffffff; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
     .image-container {
       width: 100%; max-width: 100%; margin: 58.8px auto 0 auto; border-radius: 49px; padding: 19.6px;
@@ -93,6 +94,19 @@
       min-width: 0;
     }
 
+    .success-message {
+      display: none;
+      padding: 11.89524px 27.18912px;
+      border-radius: 41.65px;
+      background: #f2f2f2;
+      color: #444;
+      font-size: 0.76925254733rem;
+      letter-spacing: 0.570674139px;
+      box-shadow: inset 4.998px 4.998px 9.996px #d9d9d9, inset -4.998px -4.998px 9.996px #ffffff;
+      margin-top: 11.89524px;
+    }
+    .success-message.show { display: block; }
+
     footer {
       margin-top: 78.4px; padding: 29.4px 0; text-align: center; font-size: 0.8rem; font-weight: 400;
       color: #666; letter-spacing: 0.5px; text-transform: uppercase; border-top: 1px solid #e0e0e0; box-shadow: 0 -4px 8px -4px #d9d9d9;
@@ -112,6 +126,7 @@
       .contact-form textarea { padding: 11.9px 19px; border-radius: 20px; }
       .contact-form .btn { padding: 11.9px 19px; border-radius: 41px; margin-top: 9px; width: 100%; }
       .contact-form { gap: 9px; }
+      .success-message { padding: 11.9px 19px; border-radius: 41px; font-size: 16px; }
       footer { margin-top: 58.8px; }
     }
   </style>
@@ -120,7 +135,7 @@
   <main>
     <header>
       <a href="https://linksco.co.za" class="logo">LINKSCO</a>
-      <a href="#contact" class="btn">GET IN TOUCH</a>
+      <a href="#contact" class="btn">Get in touch</a>
     </header>
 
     <div class="image-container">
@@ -128,17 +143,21 @@
     </div>
 
     <section id="contact" class="contact-section">
-      <form class="contact-form" action="https://formsubmit.co/info@linksco.co.za" method="POST">
+      <form id="contactForm" class="contact-form" action="https://formsubmit.co/info@linksco.co.za" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your message" required></textarea>
+        <textarea name="message" placeholder="Tell us about your project..." required></textarea>
         
         <input type="hidden" name="_subject" value="New enquiry from Linksco Website">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://linksco.co.za">
+        <input type="hidden" name="_template" value="table">
         <input type="text" name="_honey" style="display:none">
 
-        <button type="submit" class="btn">Send Message</button>
+        <button type="submit" class="btn">Send message</button>
+        
+        <div id="successMessage" class="success-message">
+          Message sent successfully. We'll get back to you soon.
+        </div>
       </form>
     </section>
   </main>
@@ -148,6 +167,41 @@
   </footer>
 
   <script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      const formData = new FormData(form);
+      
+      try {
+        await fetch(form.action, {
+          method: 'POST',
+          body: formData
+        });
+        
+        form.reset();
+        successMessage.classList.add('show');
+        submitBtn.style.display = 'none';
+        
+        setTimeout(() => {
+          successMessage.classList.remove('show');
+          submitBtn.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send message';
+        }, 5000);
+        
+      } catch (error) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send message';
+        alert('Something went wrong. Please try again.');
+      }
+    });
+
     document.querySelectorAll('a[href^="http"], a.logo').forEach(link => {
       link.addEventListener('click', function(e) {
         const href = this.href;
