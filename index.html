@@ -50,10 +50,10 @@
       background: #f2f2f2; box-shadow: 12.6px 12.6px 25.2px #d9d9d9, -12.6px -12.6px 25.2px #ffffff;
     }
 
-    .contact-header { margin-bottom: 21.168px; text-align: center; }
+    .contact-header { margin-bottom: 22.2264px; text-align: center; }
     .contact-title {
-      font-size: 1.2rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.67138134px;
-      color: #333; margin-bottom: 9.8px;
+      font-size: 1.26rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.704950407px;
+      color: #333; margin-bottom: 10.29px;
     }
     .contact-subtitle {
       font-size: 0.692327292597rem; font-weight: 400; letter-spacing: 0.36px; line-height: 1.5;
@@ -130,9 +130,9 @@
       .image-container { margin-top: 39.2px; padding: 14px; border-radius: 39.2px; }
       .contact-section { margin-top: 35.28px; max-width: 100%; }
       .contact-container { padding: 26.46px 12.6px; border-radius: 35.28px; }
-      .contact-header { margin-bottom: 17.64px; }
-      .contact-title { font-size: 1.1rem; }
-      .contact-subtitle { font-size: 14.4px; }
+      .contact-header { margin-bottom: 18.522px; }
+      .contact-title { font-size: 1.155rem; letter-spacing: 0.704950407px; }
+      .contact-subtitle { font-size: 14.4px; letter-spacing: 0.36px; }
       
       .contact-form input,
       .contact-form textarea,
@@ -172,7 +172,7 @@
           <input type="hidden" name="_captcha" value="false">
           <input type="text" name="_honey" style="display:none">
 
-          <button type="submit" class="btn">SEND MESSAGE</button>
+          <button type="submit" class="btn">Send Message</button>
           
           <div id="successMessage" class="success-message">
             Message sent successfully. We'll get back to you soon.
@@ -190,7 +190,7 @@
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       submitBtn.disabled = true;
-      submitBtn.textContent = 'SENDING...';
+      submitBtn.textContent = 'Sending...';
 
       const formData = new FormData(form);
       
