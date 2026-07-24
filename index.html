@@ -25,10 +25,9 @@
     header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; max-width: 100%; }
     .logo { font-size: 1.54265769rem; font-weight: 400; color: #333; text-transform: uppercase; text-decoration: none; display: inline-block; line-height: 1.1; white-space: nowrap; }
     
-    /* BASE BUTTON - HEADER SIZE - UNCHANGED */
     .btn {
       background: #f2f2f2; color: #444; border: none; padding: 13.9944px 31.9872px; border-radius: 49px;
-      font-size: 0.90500299686rem; font-weight: 400; text-transform:; letter-spacing: 0.67138134px;
+      font-size: 0.90500299686rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.67138134px;
       cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
       white-space: nowrap; flex-shrink: 0; font-family: "Atkinson Hyperlegible", sans-serif;
       box-shadow: 7.84px 7.84px 15.68px #d9d9d9, -7.84px -7.84px 15.68px #ffffff; transition: all 0.2s ease;
@@ -42,67 +41,61 @@
     }
     .image-container img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 29.4px; filter: grayscale(0%); pointer-events: none; user-select: none; -webkit-user-drag: none; opacity: 0.75; }
 
-    /* Contact Form - SCALED DOWN 15% TOTAL */
     .contact-section { max-width: 580px; margin: 58.8px auto 0 auto; text-align: center; }
-    .contact-section h2 { font-size: 1.54265769rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.67138134px; margin-bottom: 13.9944px; color: #333; line-height: 1.1;} /* UNCHANGED */
-    .contact-section p { font-size: 1.114141665rem; font-weight: 400; margin-bottom: 29.4px; opacity: 0.8; letter-spacing: 0.2px; } /* UNCHANGED */
     
-    .contact-form { display: flex; flex-direction: column; gap: 11.89524px; text-align: left; } /* -15% */
+    .contact-form { display: flex; flex-direction: column; gap: 11.89524px; text-align: left; }
 
-    /* INPUTS -15% */
     .contact-form input {
-      padding: 11.89524px 27.18912px; /* -15% */
-      border-radius: 41.65px; /* -15% */
+      padding: 11.89524px 27.18912px;
+      border-radius: 41.65px;
       border: none;
       background: #f2f2f2;
       font-family: "Atkinson Hyperlegible", sans-serif;
       font-weight: 400;
-      font-size: 0.76925254733rem; /* -15% */
+      font-size: 0.76925254733rem;
       color: #444;
-      letter-spacing: 0.570674139px; /* -15% */
-      box-shadow: inset 4.998px 4.998px 9.996px #d9d9d9, inset -4.998px -4.998px 9.996px #ffffff; /* -15% */
+      letter-spacing: 0.570674139px;
+      box-shadow: inset 4.998px 4.998px 9.996px #d9d9d9, inset -4.998px -4.998px 9.996px #ffffff;
       outline: none;
       transition: all 0.2s ease;
       width: 100%;
     }
     .contact-form input:focus { box-shadow: inset 3.332px 3.332px 6.664px #d9d9d9, inset -3.332px -3.332px 6.664px #ffffff; }
 
-    /* TEXTAREA -15% */
     .contact-form textarea {
-      padding: 11.89524px 27.18912px; /* -15% */
-      border-radius: 21.93px; /* -15% from 25.8px */
+      padding: 11.89524px 27.18912px;
+      border-radius: 21.93px;
       border: none;
       background: #f2f2f2;
       font-family: "Atkinson Hyperlegible", sans-serif;
       font-weight: 400;
-      font-size: 0.76925254733rem; /* -15% */
+      font-size: 0.76925254733rem;
       color: #444;
-      letter-spacing: 0.570674139px; /* -15% */
-      box-shadow: inset 4.998px 4.998px 9.996px #d9d9d9, inset -4.998px -4.998px 9.996px #ffffff; /* -15% */
+      letter-spacing: 0.570674139px;
+      box-shadow: inset 4.998px 4.998px 9.996px #d9d9d9, inset -4.998px -4.998px 9.996px #ffffff;
       outline: none;
       transition: all 0.2s ease;
       width: 100%;
-      min-height: 99.96px; /* -15% */
+      min-height: 99.96px;
       resize: vertical;
     }
     .contact-form textarea:focus { box-shadow: inset 3.332px 3.332px 6.664px #d9d9d9, inset -3.332px -3.332px 6.664px #ffffff; }
 
-    /* BUTTON -15% + FULL WIDTH */
     .contact-form .btn {
-      width: 100%; /* full width */
+      width: 100%;
       align-self: stretch;
-      margin-top: 11.89524px; /* -15% */
-      padding: 11.89524px 27.18912px; /* -15% */
-      font-size: 0.76925254733rem; /* -15% */
-      border-radius: 41.65px; /* -15% */
-      letter-spacing: 0.570674139px; /* -15% */
+      margin-top: 11.89524px;
+      padding: 11.89524px 27.18912px;
+      font-size: 0.76925254733rem;
+      border-radius: 41.65px;
+      letter-spacing: 0.570674139px;
       text-align: center;
-      min-width: 0; /* remove min-width so it can be full */
+      min-width: 0;
     }
 
     footer {
       margin-top: 78.4px; padding: 29.4px 0; text-align: center; font-size: 0.8rem; font-weight: 400;
-      color: #666; letter-spacing: 0.5px; text-transform:; border-top: 1px solid #e0e0e0; box-shadow: 0 -4px 8px -4px #d9d9d9;
+      color: #666; letter-spacing: 0.5px; text-transform: uppercase; border-top: 1px solid #e0e0e0; box-shadow: 0 -4px 8px -4px #d9d9d9;
     }
 
     @media (max-width: 768px) {
@@ -111,29 +104,13 @@
       .btn { padding: 9.996px 21.9912px; font-size: 0.78401115738rem; letter-spacing: 0.67138134px; border-radius: 49px; }
       .image-container { margin-top: 39.2px; padding: 14px; border-radius: 39.2px; }
       .contact-section { margin-top: 39.2px; max-width: 100%; }
-      .contact-section h2 { font-size: 1.114141665rem; margin-bottom: 9.996px; }
-      .contact-section p { font-size: 0.78401115738rem; margin-bottom: 19.6px; }
       
-      /* prevent iOS zoom */
       .contact-form input,
       .contact-form textarea,
-      .contact-form .btn {
-        font-size: 16px;
-      }
-      .contact-form input {
-        padding: 11.9px 19px;
-        border-radius: 41px;
-      }
-      .contact-form textarea {
-        padding: 11.9px 19px;
-        border-radius: 20px;
-      }
-      .contact-form .btn {
-        padding: 11.9px 19px;
-        border-radius: 41px;
-        margin-top: 9px;
-        width: 100%;
-      }
+      .contact-form .btn { font-size: 16px; }
+      .contact-form input { padding: 11.9px 19px; border-radius: 41px; }
+      .contact-form textarea { padding: 11.9px 19px; border-radius: 20px; }
+      .contact-form .btn { padding: 11.9px 19px; border-radius: 41px; margin-top: 9px; width: 100%; }
       .contact-form { gap: 9px; }
       footer { margin-top: 58.8px; }
     }
@@ -151,7 +128,7 @@
     </div>
 
     <section id="contact" class="contact-section">
-        <form class="contact-form" action="https://formsubmit.co/info@linksco.co.za" method="POST">
+      <form class="contact-form" action="https://formsubmit.co/info@linksco.co.za" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Tell us about your project..." required></textarea>
