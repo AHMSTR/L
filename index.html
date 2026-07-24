@@ -46,13 +46,18 @@
     .contact-section { max-width: 580px; margin: 58.8px auto 0 auto; text-align: center; scroll-margin-top: 29.4px; }
     
     .contact-container {
-      border-radius: 49px; padding: 19.6px;
+      border-radius: 49px; padding: 39.2px 19.6px;
       background: #f2f2f2; box-shadow: 14px 14px 28px #d9d9d9, -14px -14px 28px #ffffff;
     }
 
+    .contact-header { margin-bottom: 23.52px; text-align: center; }
     .contact-title {
-      font-size: 1.1rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.67138134px; padding: 5px;
-      color: #333; margin-bottom: 19.6px; text-align: center;
+      font-size: 1.2rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.67138134px;
+      color: #333; margin-bottom: 9.8px;
+    }
+    .contact-subtitle {
+      font-size: 0.76925254733rem; font-weight: 400; letter-spacing: 0.4px; line-height: 1.5;
+      color: #666;
     }
 
     .contact-form { display: flex; flex-direction: column; gap: 11.89524px; text-align: left; }
@@ -124,7 +129,10 @@
       .btn { padding: 9.996px 21.9912px; font-size: 0.78401115738rem; letter-spacing: 0.67138134px; border-radius: 49px; }
       .image-container { margin-top: 39.2px; padding: 14px; border-radius: 39.2px; }
       .contact-section { margin-top: 39.2px; max-width: 100%; }
-      .contact-container { padding: 14px; border-radius: 39.2px; }      
+      .contact-container { padding: 29.4px 14px; border-radius: 39.2px; }
+      .contact-title { font-size: 1.1rem; }
+      .contact-subtitle { font-size: 16px; }
+      
       .contact-form input,
       .contact-form textarea,
       .contact-form .btn { font-size: 16px; }
@@ -149,7 +157,12 @@
 
     <section id="contact" class="contact-section">
       <div class="contact-container">
-      <form id="contactForm" class="contact-form" action="https://formsubmit.co/info@linksco.co.za" method="POST">
+        <div class="contact-header">
+          <h2 class="contact-title">CONTACT US</h2>
+          <p class="contact-subtitle">Thank you for your interest in Linksco. If you have any questions, please fill out the form below and we'll get back to you shortly.</p>
+        </div>
+        
+        <form id="contactForm" class="contact-form" action="https://formsubmit.co/info@linksco.co.za" method="POST">
           <input type="text" name="name" placeholder="Your name" required>
           <input type="email" name="email" placeholder="Your email" required>
           <textarea name="message" placeholder="Your message" required></textarea>
@@ -167,7 +180,6 @@
       </div>
     </section>
   </main>
-
 
   <script>
     const form = document.getElementById('contactForm');
