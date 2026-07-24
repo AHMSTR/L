@@ -10,6 +10,7 @@
   <title>Linksco</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     html, body { max-width: 100%; overflow-x: hidden; transition: opacity 0.3s ease; }
     body {
       font-family: "Atkinson Hyperlegible", sans-serif;
@@ -42,7 +43,7 @@
     }
     .image-container img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 29.4px; filter: grayscale(0%); pointer-events: none; user-select: none; -webkit-user-drag: none; opacity: 0.75; }
 
-    .contact-section { max-width: 580px; margin: 58.8px auto 0 auto; text-align: center; }
+    .contact-section { max-width: 580px; margin: 58.8px auto 0 auto; text-align: center; scroll-margin-top: 29.4px; }
     
     .contact-form { display: flex; flex-direction: column; gap: 11.89524px; text-align: left; }
 
@@ -144,9 +145,9 @@
 
     <section id="contact" class="contact-section">
       <form id="contactForm" class="contact-form" action="https://formsubmit.co/info@linksco.co.za" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="Your message" required></textarea>
         
         <input type="hidden" name="_subject" value="New enquiry from Linksco Website">
         <input type="hidden" name="_captcha" value="false">
@@ -191,12 +192,12 @@
           successMessage.classList.remove('show');
           submitBtn.style.display = 'block';
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Send message';
+          submitBtn.textContent = 'Send Message';
         }, 5000);
         
       } catch (error) {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Send message';
+        submitBtn.textContent = 'Send Message';
         alert('Something went wrong. Please try again.');
       }
     });
