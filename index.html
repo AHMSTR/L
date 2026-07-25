@@ -208,12 +208,12 @@
           successMessage.classList.remove('show');
           submitBtn.style.display = 'block';
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Send Message';
+          submitBtn.textContent = 'SEND MESSAGE';
         }, 5000);
         
       } catch (error) {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
+        submitBtn.textContent = 'SEND MESSAGE';
         alert('Something went wrong. Please try again.');
       }
     });
