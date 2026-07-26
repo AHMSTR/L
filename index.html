@@ -46,7 +46,7 @@
     .contact-section { max-width: 522px; margin: 52.92px auto 0 auto; text-align: center; scroll-margin-top: 26.46px; }
     
     .contact-container {
-      border-radius: 44.1px; padding: 35.28px 35.28px;
+      border-radius: 44.1px; padding: 35.28px 29.4px;
       background: #f2f2f2; box-shadow: 12.6px 12.6px 25.2px #d9d9d9, -12.6px -12.6px 25.2px #ffffff;
     }
 
@@ -58,9 +58,11 @@
     .contact-subtitle {
       font-size: 0.676784544879rem; font-weight: 400; letter-spacing: 0.351918px; line-height: 1.5;
       color: #666;
+      padding-left: 4%;
+      padding-right: 4%;
     }
 
-    .contact-form { display: flex; flex-direction: column; gap: 10.705716px; text-align: left; }
+    .contact-form { display: flex; flex-direction: column; gap: 10.705716px; text-align: left; padding-left: 4%; padding-right: 4%; }
 
     .contact-form input {
       padding: 10.705716px 24.470208px;
@@ -120,30 +122,35 @@
       letter-spacing: 0.487926388845px;
       box-shadow: inset 4.4982px 4.4982px 8.9964px #d9d9d9, inset -4.4982px -4.4982px 8.9964px #ffffff;
       margin-top: 10.705716px;
+      width: 100%;
     }
     .success-message.show { display: block; }
 
+    footer {
+      margin-top: 52.92px;
+      padding-bottom: 10.29px;
+    }
     .copyright {
-      font-size: 0.676784544879rem;
+      font-size: 0.644556709408rem;
       font-weight: 400;
-      letter-spacing: 0.351918px;
+      letter-spacing: 0.487926388845px;
       line-height: 1.5;
       color: #666;
       text-align: left;
-      margin-top: 58.8px;
     }
 
     @media (max-width: 768px) {
       body { padding: 19.6px 19.6px; }
       .logo { font-size: 1.114141665rem; }
       .btn { padding: 9.996px 21.9912px; font-size: 0.78401115738rem; letter-spacing: 0.67138134px; border-radius: 49px; }
-      .image-container { margin-top: 39.2px; padding: 12.6px; border-radius: 39.2px; }
+      .image-container { margin-top: 39.2px; padding: 14px; border-radius: 39.2px; }
       .contact-section { margin-top: 35.28px; max-width: 100%; }
-      .contact-container { padding: 26.46px 26.46px; border-radius: 35.28px; }
+      .contact-container { padding: 26.46px 21px; border-radius: 35.28px; }
       .contact-header { margin-bottom: 18.522px; }
       .contact-title { font-size: 1.1319rem; letter-spacing: 0.690851399px; }
-      .contact-subtitle { font-size: 14.07672px; letter-spacing: 0.351918px; }
+      .contact-subtitle { font-size: 14.07672px; letter-spacing: 0.351918px; padding-left: 3%; padding-right: 3%; }
       
+      .contact-form { padding-left: 3%; padding-right: 3%; }
       .contact-form input,
       .contact-form textarea { font-size: 14.07672px; }
       .contact-form .btn { font-size: 13.4064px; }
@@ -153,7 +160,8 @@
       .contact-form { gap: 8.1px; }
       .success-message { padding: 10.71px 17.1px; border-radius: 18px; font-size: 13.4064px; }
 
-      .copyright { font-size: 14.07672px; letter-spacing: 0.351918px; margin-top: 39.2px; }
+      footer { margin-top: 35.28px; padding-bottom: 8px; }
+      .copyright { font-size: 13.4064px; }
     }
   </style>
 </head>
@@ -161,17 +169,17 @@
   <main>
     <header>
       <a href="https://linksco.co.za" class="logo">LINKSCO</a>
-      <a href="mailto:info@linksco.co.za" class="btn">GET IN TOUCH</a>
+      <a href="#contact" class="btn">GET IN TOUCH</a>
     </header>
 
     <div class="image-container">
-      <img src="megha-ajith-WRST5Pops3E-unsplash.jpg" alt="Hero image" draggable="false" oncontextmenu="return false">
+      <img src="milad-fakurian-UiiHVEyxtyA-unsplash.jpg" alt="Hero image" draggable="false" oncontextmenu="return false">
     </div>
 
     <section id="contact" class="contact-section">
       <div class="contact-container">
         <div class="contact-header">
-          <h2 class="contact-title">CONTACT US</h2>
+          <h2 class="contact-title">GET IN TOUCH</h2>
           <p class="contact-subtitle">Fill out the form below and we'll get back to you as soon as possible.</p>
         </div>
         
@@ -194,9 +202,13 @@
     </section>
   </main>
 
-  <p class="copyright">© 2026 Linksco</p>
+  <footer>
+    <p class="copyright">© <span id="year"></span> LINKSCO</p>
+  </footer>
 
   <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
     const form = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
     const submitBtn = form.querySelector('button[type="submit"]');
