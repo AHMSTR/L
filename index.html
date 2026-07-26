@@ -124,9 +124,9 @@
     .success-message.show { display: block; }
 
     .copyright {
-      font-size: 0.676784544879rem;
+      font-size: 0.644556709408rem;
       font-weight: 400;
-      letter-spacing: 0.351918px;
+      letter-spacing: 0;
       line-height: 1.5;
       color: #666;
       text-align: left;
@@ -153,7 +153,7 @@
       .contact-form { gap: 8.1px; }
       .success-message { padding: 10.71px 17.1px; border-radius: 18px; font-size: 13.4064px; }
 
-      .copyright { font-size: 14.07672px; letter-spacing: 0.351918px; margin-top: 39.2px; }
+      .copyright { font-size: 13.4064px; letter-spacing: 0; margin-top: 39.2px; }
     }
   </style>
 </head>
@@ -194,9 +194,11 @@
     </section>
   </main>
 
-  <p class="copyright">© 2026 Linksco. All rights reserved.</p>
+  <p class="copyright">© <span id="year"></span> Linksco. All rights reserved.</p>
 
   <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
     const form = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
     const submitBtn = form.querySelector('button[type="submit"]');
