@@ -123,27 +123,22 @@
     }
     .success-message.show { display: block; }
 
-    footer {
-      margin-top: 58.8px;
+    /* FOOTER = CONTAINER LIKE CONTACT + BUTTON LIKE SEND MESSAGE */
+    .footer-section { max-width: 522px; margin: 58.8px auto 0 auto; }
+    .footer-container {
+      border-radius: 44.1px; padding: 35.28px 35.28px;
+      background: #ECF0F3; box-shadow: 12.6px 12.6px 25.2px #D1D9E6, -12.6px -12.6px 25.2px #ffffff;
+    }
+    .copyright-btn {
       width: 100%;
-      border-radius: 44.1px;
-      padding: 24.5px 35.28px;
-      background: #ECF0F3;
-      border-top: 1px solid #e0e0e0;
-      box-shadow: 0 -4px 8px -4px #D1D9E6;
-      transition: all 0.2s ease;
+      background: #ECF0F3; color: #666; border: none; 
+      padding: 10.705716px 24.470208px; border-radius: 37.485px;
+      font-size: 0.644556709408rem; font-weight: 400; letter-spacing: 0.487926388845px;
+      font-family: "Atkinson Hyperlegible", sans-serif;
+      box-shadow: 7.84px 7.84px 15.68px #D1D9E6, -7.84px -7.84px 15.68px #ffffff;
+      transition: all 0.2s ease; text-align: center; cursor: default;
     }
-    footer:hover {
-      box-shadow: 6.3px 6.3px 12.6px #D1D9E6, -6.3px -6.3px 12.6px #ffffff;
-    }
-    .copyright {
-      font-size: 0.644556709408rem;
-      font-weight: 400;
-      letter-spacing: 0.487926388845px;
-      line-height: 1.5;
-      color: #666;
-      text-align: left;
-    }
+    .copyright-btn:hover { box-shadow: 3.92px 3.92px 7.84px #D1D9E6, -3.92px -3.92px 7.84px #ffffff; }
 
     @media (max-width: 768px) {
       body { padding: 19.6px 19.6px; }
@@ -158,15 +153,23 @@
       
       .contact-form input,
       .contact-form textarea { font-size: 14.07672px; }
-      .contact-form .btn { font-size: 13.4064px; }
-      .contact-form input { padding: 10.71px 17.1px; border-radius: 36.9px; }
-      .contact-form textarea { padding: 10.71px 17.1px; border-radius: 18px; }
-      .contact-form .btn { padding: 10.71px 17.1px; border-radius: 36.9px; margin-top: 8.1px; width: 100%; }
+      .contact-form .btn { 
+        font-size: 0.644556709408rem; 
+        padding: 10.71px 17.1px; 
+        border-radius: 36.9px; 
+        margin-top: 8.1px; 
+        width: 100%; 
+      }
       .contact-form { gap: 8.1px; }
-      .success-message { padding: 10.71px 17.1px; border-radius: 18px; font-size: 13.4064px; }
+      .success-message { padding: 10.71px 17.1px; border-radius: 18px; font-size: 0.644556709408rem; }
 
-      footer { margin-top: 39.2px; padding: 17.5px 24.5px; border-radius: 35.28px; }
-      .copyright { font-size: 13.4064px; letter-spacing: 0.487926388845px; }
+      .footer-section { margin-top: 39.2px; max-width: 100%; }
+      .footer-container { padding: 26.46px 26.46px; border-radius: 35.28px; }
+      .copyright-btn { 
+        font-size: 0.644556709408rem; 
+        padding: 10.71px 17.1px; 
+        border-radius: 36.9px; 
+      }
     }
   </style>
 </head>
@@ -207,8 +210,10 @@
     </section>
   </main>
 
-  <footer>
-    <p class="copyright">© <span id="year"></span> Linksco. All rights reserved.</p>
+  <footer class="footer-section">
+    <div class="footer-container">
+      <button type="button" class="copyright-btn">© <span id="year"></span> Linksco. All rights reserved.</button>
+    </div>
   </footer>
 
   <script>
