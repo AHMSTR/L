@@ -125,10 +125,22 @@
 
     .footer-container {
       margin-top: 58.8px;
-      border-radius: 29.4px;
-      padding: 19.6px 29.4px;
-      background: #f2f2f2;
-      box-shadow: 9.8px 9.8px 19.6px #d9d9d9, -9.8px -9.8px 19.6px #ffffff;
+      border-radius: 35.28px;
+      padding: 24.5px 35.28px;
+      background: linear-gradient(145deg, #f7f7f7, #e8e8e8);
+      box-shadow: 12.6px 12.6px 25.2px #d9d9d9, -12.6px -12.6px 25.2px #ffffff, inset 2px 2px 4px #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+    .footer-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 29.4px;
+      width: 58.8px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #bbb, transparent);
+      border-radius: 2px;
     }
     .copyright {
       font-size: 0.644556709408rem;
@@ -159,7 +171,8 @@
       .contact-form { gap: 8.1px; }
       .success-message { padding: 10.71px 17.1px; border-radius: 18px; font-size: 13.4064px; }
 
-      .footer-container { margin-top: 39.2px; padding: 14px 21px; border-radius: 24.5px; }
+      .footer-container { margin-top: 39.2px; padding: 17.5px 24.5px; border-radius: 28px; }
+      .footer-container::before { left: 21px; width: 42px; height: 2.5px; }
       .copyright { font-size: 13.4064px; letter-spacing: 0.487926388845px; }
     }
   </style>
