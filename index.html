@@ -132,7 +132,18 @@
       text-align: left;
       margin-top: 58.8px;
     }
-
+    footer {
+      margin-top: 98px;
+      padding: 29.4px 0;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #666;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border-top: 1px solid #e0e0e0;
+      box-shadow: 0 -4px 8px -4px #d9d9d9;
+    }
     @media (max-width: 768px) {
       body { padding: 19.6px 19.6px; }
       .logo { font-size: 1.114141665rem; }
@@ -194,7 +205,9 @@
     </section>
   </main>
 
-  <p class="copyright">© <span id="year"></span> Linksco. All rights reserved.</p>
+  <footer>
+    <p class="copyright">© <span id="year"></span> Linksco. All rights reserved.</p>
+    </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
