@@ -123,30 +123,27 @@
     }
     .success-message.show { display: block; }
 
+    footer {
+      margin-top: 58.8px;
+      width: 100%;
+      border-radius: 44.1px;
+      padding: 24.5px 35.28px;
+      background: #f2f2f2;
+      box-shadow: 12.6px 12.6px 25.2px #d9d9d9, -12.6px -12.6px 25.2px #ffffff;
+      transition: all 0.2s ease;
+    }
+    footer:hover {
+      box-shadow: 6.3px 6.3px 12.6px #d9d9d9, -6.3px -6.3px 12.6px #ffffff;
+    }
     .copyright {
       font-size: 0.644556709408rem;
       font-weight: 400;
-      letter-spacing: 0.351918px;
+      letter-spacing: 0.487926388845px;
       line-height: 1.5;
       color: #666;
       text-align: left;
-      margin-top: 58.8px;
     }
-    footer {
-      width: 100%;
-      max-width: 100%;
-      margin-top: 98px;
-      padding: 29.4px 0;
-      text-align: center;
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: #666;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      border-top: 1px solid #e0e0e0;
-      box-shadow: 0 -4px 8px -4px #d9d9d9;
-      position: relative;
-    }
+
     @media (max-width: 768px) {
       body { padding: 19.6px 19.6px; }
       .logo { font-size: 1.114141665rem; }
@@ -167,7 +164,8 @@
       .contact-form { gap: 8.1px; }
       .success-message { padding: 10.71px 17.1px; border-radius: 18px; font-size: 13.4064px; }
 
-      .copyright { font-size: 13.4064px; letter-spacing: 0.351918px; margin-top: 39.2px; }
+      footer { margin-top: 39.2px; padding: 17.5px 24.5px; border-radius: 35.28px; }
+      .copyright { font-size: 13.4064px; letter-spacing: 0.487926388845px; }
     }
   </style>
 </head>
@@ -209,8 +207,8 @@
   </main>
 
   <footer>
-    <span>© <span id="year"></span> Linksco. All rights reserved.</span>
-    </footer>
+    <p class="copyright">© <span id="year"></span> Linksco. All rights reserved.</p>
+  </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
