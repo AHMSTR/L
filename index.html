@@ -123,14 +123,17 @@
     }
     .success-message.show { display: block; }
 
+    .footer {
+      margin-top: 58.8px;
+      padding-bottom: 10.29px;
+    }
     .copyright {
       font-size: 0.644556709408rem;
       font-weight: 400;
-      letter-spacing: 0.351918px;
+      letter-spacing: 0.487926388845px;
       line-height: 1.5;
       color: #666;
       text-align: left;
-      margin-top: 58.8px;
     }
 
     @media (max-width: 768px) {
@@ -153,7 +156,8 @@
       .contact-form { gap: 8.1px; }
       .success-message { padding: 10.71px 17.1px; border-radius: 18px; font-size: 13.4064px; }
 
-      .copyright { font-size: 13.4064px; letter-spacing: 0.351918px; margin-top: 39.2px; }
+      .footer { margin-top: 39.2px; padding-bottom: 8px; }
+      .copyright { font-size: 13.4064px; letter-spacing: 0.487926388845px; }
     }
   </style>
 </head>
@@ -194,7 +198,9 @@
     </section>
   </main>
 
-  <p class="copyright">© <span id="year"></span> Linksco. All rights reserved.</p>
+  <footer class="footer">
+    <p class="copyright">© <span id="year"></span> Linksco. All rights reserved.</p>
+  </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
