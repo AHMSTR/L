@@ -9,7 +9,7 @@
  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
  <title>Linksco</title>
  <style>
- - { margin: 0; padding: 0; box-sizing: border-box; }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
  html { scroll-behavior: smooth; }
  html, body { max-width: 100%; overflow-x: hidden; transition: opacity 0.3s ease; }
  body {
@@ -23,7 +23,7 @@
  flex-direction: column;
  }
 ::placeholder {
- color: #;
+ color: #9da4ad;
  }
  main { flex: 1; }
  header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; max-width: 100%; }
@@ -43,21 +43,36 @@
 .image-container {
  width: 100%; max-width: 100%; margin: 58.8px auto 0 auto; border-radius: 49px; padding: 19.6px;
  background: #ECF0F3; box-shadow: 14px 14px 28px #D1D9E6, -14px -14px 28px #ffffff; position: relative;
+ aspect-ratio: 16 / 9; /* prevents stretching */
+ overflow: hidden;
  }
-.image-container img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 29.4px; filter: grayscale(0%); pointer-events: none; user-select: none; -webkit-user-drag: none; opacity: 0.75; }
+.image-container img { 
+ display: block; 
+ width: 100%; 
+ height: 100%; 
+ object-fit: cover; /* keeps image ratio */
+ border-radius: 29.4px; 
+ filter: grayscale(0%); 
+ pointer-events: none; 
+ user-select: none; 
+ -webkit-user-drag: none; 
+ opacity: 0.75; 
+}
 .image-text {
  position: absolute;
  top: 50%;
  left: 50%;
  transform: translate(-50%, -50%);
  text-align: center;
- font-size: 2rem;
+ font-size: clamp(1.2rem, 4vw, 2.2rem);
  font-weight: 400;
  letter-spacing: 2px;
  text-transform: uppercase;
  color: #fff;
+ text-shadow: 0 2px 12px rgba(0,0,0,0.25);
  pointer-events: none;
  white-space: nowrap;
+ z-index: 2;
  }
 
 .contact-section { max-width: 522px; margin: 52.92px auto 0 auto; text-align: center; scroll-margin-top: 26.46px; }
@@ -115,7 +130,7 @@
  }
 .contact-form textarea:focus { box-shadow: inset 2.9988px 2.9988px 5.9976px #D1D9E6, inset -2.9988px -2.9988px 5.9976px #ffffff; }
 
-.contact-form.btn {
+.contact-form .btn {
  width: 100%;
  align-self: stretch;
  margin-top: 10.705716px;
@@ -132,7 +147,7 @@
  padding: 10.705716px 24.470208px;
  border-radius: 19.737px;
  background: #ECF0F3;
- color: #;
+ color: #5cb85c;
  font-size: 0.644556709408rem;
  letter-spacing: 0.487926388845px;
  box-shadow: inset 4.4982px 4.4982px 8.9964px #D1D9E6, inset -4.4982px -4.4982px 8.9964px #ffffff;
@@ -160,12 +175,12 @@
  body { padding: 19.6px 19.6px; }
 .logo { font-size: 1.114141665rem; }
 .btn { padding: 9.996px 21.9912px; font-size: 0.78401115738rem; letter-spacing: 0.67138134px; border-radius: 49px; }
-.image-container { margin-top: 39.2px; padding: 12.6px; border-radius: 39.2px; }
+.image-container { margin-top: 39.2px; padding: 12.6px; border-radius: 39.2px; aspect-ratio: 4 / 3; }
 .image-text {
- font-size: 1.3rem;
+ font-size: clamp(1rem, 5vw, 1.4rem);
  letter-spacing: 1.2px;
- padding: 12px 18px;
  white-space: normal;
+ padding: 0 10px;
  }
 .contact-section { margin-top: 35.28px; max-width: 100%; }
 .contact-container { padding: 26.46px 26.46px; border-radius: 35.28px; }
@@ -175,7 +190,7 @@
 
 .contact-form input,
 .contact-form textarea { font-size: 14.07672px; }
-.contact-form.btn { font-size: 13.4064px; padding: 10.71px 17.1px; border-radius: 36.9px; margin-top: 8.1px; width: 100%; }
+.contact-form .btn { font-size: 13.4064px; padding: 10.71px 17.1px; border-radius: 36.9px; margin-top: 8.1px; width: 100%; }
 .contact-form { gap: 8.1px; }
 .success-message { padding: 10.71px 17.1px; border-radius: 18px; font-size: 13.4064px; }
 
@@ -233,16 +248,16 @@
  </footer>
 
  <script>
- http://document.getElementById('year').textContent = new Date().getFullYear();
+ document.getElementById('year').textContent = new Date().getFullYear();
 
- const form = http://document.getElementById('contactForm');
- const successMessage = http://document.getElementById('successMessage');
- const submitBtn = http://form.querySelector('button[type="submit"]');
+ const form = document.getElementById('contactForm');
+ const successMessage = document.getElementById('successMessage');
+ const submitBtn = form.querySelector('button[type="submit"]');
 
- http://form.addEventListener('submit', async function(e) {
- http://e.preventDefault();
- http://submitBtn.disabled = true;
- http://submitBtn.textContent = 'SENDING...';
+ form.addEventListener('submit', async function(e) {
+ e.preventDefault();
+ submitBtn.disabled = true;
+ submitBtn.textContent = 'SENDING...';
 
  const formData = new FormData(form);
 
@@ -252,35 +267,34 @@
  body: formData
  });
 
- http://form.reset();
- http://successMessage.classList.add('show');
- http://submitBtn.style.display = 'none';
+ form.reset();
+ successMessage.classList.add('show');
+ submitBtn.style.display = 'none';
 
  setTimeout(() => {
- http://successMessage.classList.remove('show');
- http://submitBtn.style.display = 'block';
- http://submitBtn.disabled = false;
- http://submitBtn.textContent = 'SEND MESSAGE';
+ successMessage.classList.remove('show');
+ submitBtn.style.display = 'block';
+ submitBtn.disabled = false;
+ submitBtn.textContent = 'SEND MESSAGE';
  }, 5000);
 
  } catch (error) {
- http://submitBtn.disabled = false;
- http://submitBtn.textContent = 'SEND MESSAGE';
+ submitBtn.disabled = false;
+ submitBtn.textContent = 'SEND MESSAGE';
  alert('Something went wrong. Please try again.');
  }
  });
 
- http://document.querySelectorAll('a[href^="http"], http://a.logo').forEach(link => {
- http://link.addEventListener('click', function(e) {
- const href = http://this.href;
- if (href.startsWith('mailto:') || http://href.startsWith('#')) { return; }
- http://e.preventDefault();
- http://document.body.style.opacity = '0.7';
- setTimeout(() => { http://window.location.href = href; }, 1000);
+ document.querySelectorAll('a[href^="http"], a.logo').forEach(link => {
+ link.addEventListener('click', function(e) {
+ const href = this.href;
+ if (href.startsWith('mailto:') || href.startsWith('#')) { return; }
+ e.preventDefault();
+ document.body.style.opacity = '0.7';
+ setTimeout(() => { window.location.href = href; }, 1000);
  });
- });
- http://document.addEventListener('contextmenu', e => { if(e.target.tagName === 'IMG') http://e.preventDefault(); });
- http://document.addEventListener('dragstart', e => { if(e.target.tagName === 'IMG') http://e.preventDefault(); });
+ document.addEventListener('contextmenu', e => { if(e.target.tagName === 'IMG') e.preventDefault(); });
+ document.addEventListener('dragstart', e => { if(e.target.tagName === 'IMG') e.preventDefault(); });
  </script>
 </body>
 </html>
