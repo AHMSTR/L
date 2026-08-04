@@ -1,300 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
- <meta name="theme-color" content="#ECF0F3">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
- <title>Linksco</title>
- <style>
- * { margin: 0; padding: 0; box-sizing: border-box; }
- html { scroll-behavior: smooth; }
- html, body { max-width: 100%; overflow-x: hidden; transition: opacity 0.3s ease; }
- body {
- font-family: "Atkinson Hyperlegible", sans-serif;
- font-weight: 400;
- background: #ECF0F3;
- min-height: 100vh;
- padding: 29.4px 58.8px;
- color: #54575C;
- display: flex;
- flex-direction: column;
- }
-::placeholder {
- color: #9da4ad;
- }
- main { flex: 1; }
- header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; max-width: 100%; }
-.logo { font-size: 1.54265769rem; font-weight: 400; color: #54575C; text-transform: uppercase; text-decoration: none; display: inline-block; line-height: 1.1; white-space: nowrap; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#ECF0F3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <title>Linksco</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body { max-width: 100%; overflow-x: hidden; transition: opacity 0.3s ease; }
+    body {
+      font-family: "Atkinson Hyperlegible", sans-serif;
+      font-weight: 400;
+      background: #ECF0F3;
+      min-height: 100vh;
+      padding: 29.4px 58.8px;
+      color: #54575C;
+      display: flex;
+      flex-direction: column;
+    }
+    ::placeholder {
+      color: #9da4ad;
+      }
+    main { flex: 1; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; max-width: 100%; }
+    .logo { font-size: 1.54265769rem; font-weight: 400; color: #54575C; text-transform: uppercase; text-decoration: none; display: inline-block; line-height: 1.1; white-space: nowrap; }
+    
+    .btn {
+      background: #ECF0F3; color: #54575C; border: none; padding: 13.9944px 31.9872px; border-radius: 49px;
+      font-size: 0.90500299686rem; font-weight: 400; letter-spacing: 0.67138134px;
+      cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+      white-space: nowrap; flex-shrink: 0; font-family: "Atkinson Hyperlegible", sans-serif;
+      box-shadow: 7.84px 7.84px 15.68px #D1D9E6, -7.84px -7.84px 15.68px #ffffff; transition: all 0.2s ease;
+    }
+    .btn:hover { box-shadow: 3.92px 3.92px 7.84px #D1D9E6, -3.92px -3.92px 7.84px #ffffff; }
+    .btn:active { box-shadow: inset 3.92px 3.92px 7.84px #D1D9E6, inset -3.92px -3.92px 7.84px #ffffff; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-.btn {
- background: #ECF0F3; color: #54575C; border: none; padding: 13.9944px 31.9872px; border-radius: 49px;
- font-size: 0.90500299686rem; font-weight: 400; letter-spacing: 0.67138134px;
- cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
- white-space: nowrap; flex-shrink: 0; font-family: "Atkinson Hyperlegible", sans-serif;
- box-shadow: 7.84px 7.84px 15.68px #D1D9E6, -7.84px -7.84px 15.68px #ffffff; transition: all 0.2s ease;
- }
-.btn:hover { box-shadow: 3.92px 3.92px 7.84px #D1D9E6, -3.92px -3.92px 7.84px #ffffff; }
-.btn:active { box-shadow: inset 3.92px 3.92px 7.84px #D1D9E6, inset -3.92px -3.92px 7.84px #ffffff; }
-.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .image-container {
+      width: 100%; max-width: 100%; margin: 58.8px auto 0 auto; border-radius: 49px; padding: 19.6px;
+      background: #ECF0F3; box-shadow: 14px 14px 28px #D1D9E6, -14px -14px 28px #ffffff; position: relative;
+    }
+    .image-container img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 29.4px; filter: grayscale(0%); pointer-events: none; user-select: none; -webkit-user-drag: none; opacity: 0.75; }
 
-.image-container {
- width: 100%; max-width: 100%; margin: 58.8px auto 0 auto; border-radius: 49px; padding: 19.6px;
- background: #ECF0F3; box-shadow: 14px 14px 28px #D1D9E6, -14px -14px 28px #ffffff; position: relative;
- aspect-ratio: 16 / 9; /* prevents stretching */
- overflow: hidden;
- }
-.image-container img { 
- display: block; 
- width: 100%; 
- height: 100%; 
- object-fit: cover; /* keeps image ratio */
- border-radius: 29.4px; 
- filter: grayscale(0%); 
- pointer-events: none; 
- user-select: none; 
- -webkit-user-drag: none; 
- opacity: 0.75; 
-}
-.image-text {
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- text-align: center;
- font-size: clamp(1.2rem, 4vw, 2.2rem);
- font-weight: 400;
- letter-spacing: 2px;
- text-transform: uppercase;
- color: #fff;
- text-shadow: 0 2px 12px rgba(0,0,0,0.25);
- pointer-events: none;
- white-space: nowrap;
- z-index: 2;
- }
+    .contact-section { max-width: 522px; margin: 52.92px auto 0 auto; text-align: center; scroll-margin-top: 26.46px; }
+    
+    .contact-container {
+      border-radius: 44.1px; padding: 35.28px 35.28px;
+      background: #ECF0F3; box-shadow: 12.6px 12.6px 25.2px #D1D9E6, -12.6px -12.6px 25.2px #ffffff;
+    }
 
-.contact-section { max-width: 522px; margin: 52.92px auto 0 auto; text-align: center; scroll-margin-top: 26.46px; }
+    .contact-header { margin-bottom: 22.2264px; text-align: center; }
+    .contact-title {
+      font-size: 1.2348rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.690851399px;
+      color: #54575C; margin-bottom: 10.29px;
+    }
+    .contact-subtitle {
+      font-size: 0.676784544879rem; font-weight: 400; letter-spacing: 0.351918px; line-height: 1.5;
+      color: #54575C;
+    }
 
-.contact-container {
- border-radius: 44.1px; padding: 35.28px 35.28px;
- background: #ECF0F3; box-shadow: 12.6px 12.6px 25.2px #D1D9E6, -12.6px -12.6px 25.2px #ffffff;
- }
+    .contact-form { display: flex; flex-direction: column; gap: 10.705716px; text-align: left; }
 
-.contact-header { margin-bottom: 22.2264px; text-align: center; }
-.contact-title {
- font-size: 1.2348rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.690851399px;
- color: #54575C; margin-bottom: 10.29px;
- }
-.contact-subtitle {
- font-size: 0.676784544879rem; font-weight: 400; letter-spacing: 0.351918px; line-height: 1.5;
- color: #54575C;
- }
+    .contact-form input {
+      padding: 10.705716px 24.470208px;
+      border-radius: 37.485px;
+      border: none;
+      background: #ECF0F3;
+      font-family: "Atkinson Hyperlegible", sans-serif;
+      font-weight: 400;
+      font-size: 0.676784544879rem;
+      color: #54575C;
+      letter-spacing: 0.487926388845px;
+      box-shadow: inset 4.4982px 4.4982px 8.9964px #D1D9E6, inset -4.4982px -4.4982px 8.9964px #ffffff;
+      outline: none;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+    .contact-form input:focus { box-shadow: inset 2.9988px 2.9988px 5.9976px #D1D9E6, inset -2.9988px -2.9988px 5.9976px #ffffff; }
 
-.contact-form { display: flex; flex-direction: column; gap: 10.705716px; text-align: left; }
+    .contact-form textarea {
+      padding: 10.705716px 24.470208px;
+      border-radius: 19.737px;
+      border: none;
+      background: #ECF0F3;
+      font-family: "Atkinson Hyperlegible", sans-serif;
+      font-weight: 400;
+      font-size: 0.676784544879rem;
+      color: #54575C;
+      letter-spacing: 0.487926388845px;
+      box-shadow: inset 4.4982px 4.4982px 8.9964px #D1D9E6, inset -4.4982px -4.4982px 8.9964px #ffffff;
+      outline: none;
+      transition: all 0.2s ease;
+      width: 100%;
+      min-height: 89.964px;
+      resize: vertical;
+    }
+    .contact-form textarea:focus { box-shadow: inset 2.9988px 2.9988px 5.9976px #D1D9E6, inset -2.9988px -2.9988px 5.9976px #ffffff; }
 
-.contact-form input {
- padding: 10.705716px 24.470208px;
- border-radius: 37.485px;
- border: none;
- background: #ECF0F3;
- font-family: "Atkinson Hyperlegible", sans-serif;
- font-weight: 400;
- font-size: 0.676784544879rem;
- color: #54575C;
- letter-spacing: 0.487926388845px;
- box-shadow: inset 4.4982px 4.4982px 8.9964px #D1D9E6, inset -4.4982px -4.4982px 8.9964px #ffffff;
- outline: none;
- transition: all 0.2s ease;
- width: 100%;
- }
-.contact-form input:focus { box-shadow: inset 2.9988px 2.9988px 5.9976px #D1D9E6, inset -2.9988px -2.9988px 5.9976px #ffffff; }
+    .contact-form .btn {
+      width: 100%;
+      align-self: stretch;
+      margin-top: 10.705716px;
+      padding: 10.705716px 24.470208px;
+      font-size: 0.644556709408rem;
+      border-radius: 37.485px;
+      letter-spacing: 0.487926388845px;
+      text-align: center;
+      min-width: 0;
+    }
 
-.contact-form textarea {
- padding: 10.705716px 24.470208px;
- border-radius: 19.737px;
- border: none;
- background: #ECF0F3;
- font-family: "Atkinson Hyperlegible", sans-serif;
- font-weight: 400;
- font-size: 0.676784544879rem;
- color: #54575C;
- letter-spacing: 0.487926388845px;
- box-shadow: inset 4.4982px 4.4982px 8.9964px #D1D9E6, inset -4.4982px -4.4982px 8.9964px #ffffff;
- outline: none;
- transition: all 0.2s ease;
- width: 100%;
- min-height: 89.964px;
- resize: vertical;
- }
-.contact-form textarea:focus { box-shadow: inset 2.9988px 2.9988px 5.9976px #D1D9E6, inset -2.9988px -2.9988px 5.9976px #ffffff; }
+    .success-message {
+      display: none;
+      padding: 10.705716px 24.470208px;
+      border-radius: 19.737px;
+      background: #ECF0F3;
+      color: #5cb85c;
+      font-size: 0.644556709408rem;
+      letter-spacing: 0.487926388845px;
+      box-shadow: inset 4.4982px 4.4982px 8.9964px #D1D9E6, inset -4.4982px -4.4982px 8.9964px #ffffff;
+      margin-top: 10.705716px;
+    }
+    .success-message.show { display: block; }
 
-.contact-form .btn {
- width: 100%;
- align-self: stretch;
- margin-top: 10.705716px;
- padding: 10.705716px 24.470208px;
- font-size: 0.644556709408rem;
- border-radius: 37.485px;
- letter-spacing: 0.487926388845px;
- text-align: center;
- min-width: 0;
- }
+    .footer-section { max-width: 522px; margin: 58.8px auto 0 auto; }
+    .footer-container {
+      border-radius:; padding: 19.6px 19.6px 0 19.6px;
+      background: #ECF0F3;
+      border-top: 1px solid #D1D9E6;
+      box-shadow: 0 -4px 8px -4px #D1D9E6;
+    }
+    .copyright-btn {
+      width: 100%;
+      background: #ECF0F3; color: #54575C; border: none; 
+      padding: 0; border-radius:;
+      font-size: 0.90500299686rem; font-weight: 400; letter-spacing: 0.487926388845px;
+      font-family: "Atkinson Hyperlegible", sans-serif;
+      box-shadow:;
+      transition: all 0.2s ease; text-align: center; cursor: default;
+    }
+    .copyright-btn:hover { box-shadow:; }
 
-.success-message {
- display: none;
- padding: 10.705716px 24.470208px;
- border-radius: 19.737px;
- background: #ECF0F3;
- color: #5cb85c;
- font-size: 0.644556709408rem;
- letter-spacing: 0.487926388845px;
- box-shadow: inset 4.4982px 4.4982px 8.9964px #D1D9E6, inset -4.4982px -4.4982px 8.9964px #ffffff;
- margin-top: 10.705716px;
- }
-.success-message.show { display: block; }
+    @media (max-width: 768px) {
+      body { padding: 19.6px 19.6px; }
+      .logo { font-size: 1.114141665rem; }
+      .btn { padding: 9.996px 21.9912px; font-size: 0.78401115738rem; letter-spacing: 0.67138134px; border-radius: 49px; }
+      .image-container { margin-top: 39.2px; padding: 12.6px; border-radius: 39.2px; }
+      .contact-section { margin-top: 35.28px; max-width: 100%; }
+      .contact-container { padding: 26.46px 26.46px; border-radius: 35.28px; }
+      .contact-header { margin-bottom: 18.522px; }
+      .contact-title { font-size: 1.1319rem; letter-spacing: 0.690851399px; }
+      .contact-subtitle { font-size: 14.07672px; letter-spacing: 0.351918px; }
+      
+      .contact-form input,
+      .contact-form textarea { font-size: 14.07672px; }
+      .contact-form .btn { font-size: 13.4064px; padding: 10.71px 17.1px; border-radius: 36.9px; margin-top: 8.1px; width: 100%; }
+      .contact-form { gap: 8.1px; }
+      .success-message { padding: 10.71px 17.1px; border-radius: 18px; font-size: 13.4064px; }
 
-.footer-section { max-width: 522px; margin: 58.8px auto 0 auto; }
-.footer-container {
- padding: 19.6px 19.6px 0 19.6px;
- background: #ECF0F3;
- border-top: 1px solid #D1D9E6;
- box-shadow: 0 -4px 8px -4px #D1D9E6;
- }
-.copyright-btn {
- width: 100%;
- background: #ECF0F3; color: #54575C; border: none;
- padding: 0;
- font-size: 0.90500299686rem; font-weight: 400; letter-spacing: 0.487926388845px;
- font-family: "Atkinson Hyperlegible", sans-serif;
- transition: all 0.2s ease; text-align: center; cursor: default;
- }
-
- @media (max-width: 768px) {
- body { padding: 19.6px 19.6px; }
-.logo { font-size: 1.114141665rem; }
-.btn { padding: 9.996px 21.9912px; font-size: 0.78401115738rem; letter-spacing: 0.67138134px; border-radius: 49px; }
-.image-container { margin-top: 39.2px; padding: 12.6px; border-radius: 39.2px; aspect-ratio: 4 / 3; }
-.image-text {
- font-size: clamp(1rem, 5vw, 1.4rem);
- letter-spacing: 1.2px;
- white-space: normal;
- padding: 0 10px;
- }
-.contact-section { margin-top: 35.28px; max-width: 100%; }
-.contact-container { padding: 26.46px 26.46px; border-radius: 35.28px; }
-.contact-header { margin-bottom: 18.522px; }
-.contact-title { font-size: 1.1319rem; letter-spacing: 0.690851399px; }
-.contact-subtitle { font-size: 14.07672px; letter-spacing: 0.351918px; }
-
-.contact-form input,
-.contact-form textarea { font-size: 14.07672px; }
-.contact-form .btn { font-size: 13.4064px; padding: 10.71px 17.1px; border-radius: 36.9px; margin-top: 8.1px; width: 100%; }
-.contact-form { gap: 8.1px; }
-.success-message { padding: 10.71px 17.1px; border-radius: 18px; font-size: 13.4064px; }
-
-.footer-section { margin-top: 39.2px; max-width: 100%; }
-.footer-container { padding: 12.6px 12.6px 0 12.6px; }
-.copyright-btn {
- font-size: 0.78401115738rem;
- padding: 0;
- }
- }
- </style>
+      .footer-section { margin-top: 39.2px; max-width: 100%; }
+      .footer-container { padding: 12.6px 12.6px 0 12.6px; border-radius:; }
+      .copyright-btn { 
+        font-size: 0.78401115738rem; 
+        padding: 0; 
+        border-radius:; 
+      }
+    }
+  </style>
 </head>
 <body>
- <main>
- <header>
- <a href="https://linksco.co.za" class="logo">LINKSCO</a>
- <a href="mailto:info@linksco.co.za" class="btn">GET IN TOUCH</a>
- </header>
+  <main>
+    <header>
+      <a href="https://linksco.co.za" class="logo">LINKSCO</a>
+      <a href="mailto:info@linksco.co.za" class="btn">GET IN TOUCH</a>
+    </header>
 
- <div class="image-container">
- <img src="milad-fakurian-UiiHVEyxtyA-unsplash.jpg" alt="Hero image" draggable="false" oncontextmenu="return false">
- <div class="image-text">Connecting possibilities</div>
- </div>
+    <div class="image-container">
+      <img src="milad-fakurian-UiiHVEyxtyA-unsplash.jpg" alt="Hero image" draggable="false" oncontextmenu="return false">
+    </div>
 
- <section id="contact" class="contact-section">
- <div class="contact-container">
- <div class="contact-header">
- <h2 class="contact-title">CONTACT US</h2>
- <p class="contact-subtitle">Fill out the form below and we'll get back to you as soon as possible.</p>
- </div>
+    <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <div class="contact-header">
+          <h2 class="contact-title">CONTACT US</h2>
+          <p class="contact-subtitle">Fill out the form below and we'll get back to you as soon as possible.</p>
+        </div>
+        
+        <form id="contactForm" class="contact-form" action="https://formsubmit.co/info@linksco.co.za" method="POST">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+          <textarea name="message" placeholder="Your message" required></textarea>
+          
+          <input type="hidden" name="_subject" value="New enquiry from Linksco Website">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none">
 
- <form id="contactForm" class="contact-form" action="https://formsubmit.co/info@linksco.co.za" method="POST">
- <input type="text" name="name" placeholder="Your name" required>
- <input type="email" name="email" placeholder="Your email" required>
- <textarea name="message" placeholder="Your message" required></textarea>
+          <button type="submit" class="btn">SEND MESSAGE</button>
+          
+          <div id="successMessage" class="success-message">
+            Your message has been sent successfully. We will get back to you soon!
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
 
- <input type="hidden" name="_subject" value="New enquiry from Linksco Website">
- <input type="hidden" name="_captcha" value="false">
- <input type="text" name="_honey" style="display:none">
+  <footer class="footer-section">
+    <div class="footer-container">
+      <p class="copyright-btn">© <span id="year"></span> Linksco. All rights reserved.</p>
+    </div>
+  </footer>
 
- <button type="submit" class="btn">SEND MESSAGE</button>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
- <div id="successMessage" class="success-message">
- Your message has been sent successfully. We will get back to you soon!
- </div>
- </form>
- </div>
- </section>
- </main>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    const submitBtn = form.querySelector('button[type="submit"]');
 
- <footer class="footer-section">
- <div class="footer-container">
- <p class="copyright-btn">© <span id="year"></span> Linksco. All rights reserved.</p>
- </div>
- </footer>
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'SENDING...';
 
- <script>
- document.getElementById('year').textContent = new Date().getFullYear();
+      const formData = new FormData(form);
+      
+      try {
+        await fetch(form.action, {
+          method: 'POST',
+          body: formData
+        });
+        
+        form.reset();
+        successMessage.classList.add('show');
+        submitBtn.style.display = 'none';
+        
+        setTimeout(() => {
+          successMessage.classList.remove('show');
+          submitBtn.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'SEND MESSAGE';
+        }, 5000);
+        
+      } catch (error) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'SEND MESSAGE';
+        alert('Something went wrong. Please try again.');
+      }
+    });
 
- const form = document.getElementById('contactForm');
- const successMessage = document.getElementById('successMessage');
- const submitBtn = form.querySelector('button[type="submit"]');
-
- form.addEventListener('submit', async function(e) {
- e.preventDefault();
- submitBtn.disabled = true;
- submitBtn.textContent = 'SENDING...';
-
- const formData = new FormData(form);
-
- try {
- await fetch(form.action, {
- method: 'POST',
- body: formData
- });
-
- form.reset();
- successMessage.classList.add('show');
- submitBtn.style.display = 'none';
-
- setTimeout(() => {
- successMessage.classList.remove('show');
- submitBtn.style.display = 'block';
- submitBtn.disabled = false;
- submitBtn.textContent = 'SEND MESSAGE';
- }, 5000);
-
- } catch (error) {
- submitBtn.disabled = false;
- submitBtn.textContent = 'SEND MESSAGE';
- alert('Something went wrong. Please try again.');
- }
- });
-
- document.querySelectorAll('a[href^="http"], a.logo').forEach(link => {
- link.addEventListener('click', function(e) {
- const href = this.href;
- if (href.startsWith('mailto:') || href.startsWith('#')) { return; }
- e.preventDefault();
- document.body.style.opacity = '0.7';
- setTimeout(() => { window.location.href = href; }, 1000);
- });
- document.addEventListener('contextmenu', e => { if(e.target.tagName === 'IMG') e.preventDefault(); });
- document.addEventListener('dragstart', e => { if(e.target.tagName === 'IMG') e.preventDefault(); });
- </script>
+    document.querySelectorAll('a[href^="http"], a.logo').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.href;
+        if (href.startsWith('mailto:') || href.startsWith('#')) { return; }
+        e.preventDefault();
+        document.body.style.opacity = '0.7';
+        setTimeout(() => { window.location.href = href; }, 1000);
+      });
+    });
+    document.addEventListener('contextmenu', e => { if(e.target.tagName === 'IMG') e.preventDefault(); });
+    document.addEventListener('dragstart', e => { if(e.target.tagName === 'IMG') e.preventDefault(); });
+  </script>
 </body>
 </html>
